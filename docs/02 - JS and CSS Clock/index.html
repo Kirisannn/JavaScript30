@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JS + CSS Clock</title>
+	<link rel="icon" href="https://fav.farm/🔥" />
+</head>
+
+<body>
+	<div class="clock">
+		<div class="clock-face">
+			<div class="hand hour-hand"></div>
+			<div class="hand min-hand"></div>
+			<div class="hand second-hand"></div>
+		</div>
+
+        <!-- Hour Tick marks -->
+        <div class="hour-ticks">
+            <div class="hour-tick" style="--i:0"></div>
+            <div class="hour-tick" style="--i:1"></div>
+            <div class="hour-tick" style="--i:2"></div>
+            <div class="hour-tick" style="--i:3"></div>
+            <div class="hour-tick" style="--i:4"></div>
+            <div class="hour-tick" style="--i:5"></div>
+            <div class="hour-tick" style="--i:6"></div>
+            <div class="hour-tick" style="--i:7"></div>
+            <div class="hour-tick" style="--i:8"></div>
+            <div class="hour-tick" style="--i:9"></div>
+            <div class="hour-tick" style="--i:10"></div>
+            <div class="hour-tick" style="--i:11"></div>
+        </div>
+        
+        <!-- Minute Tick marks -->
+        <div class="min-ticks">
+            <div class="min-tick" style="--i:1"></div>
+            <div class="min-tick" style="--i:2"></div>
+            <div class="min-tick" style="--i:3"></div>
+            <div class="min-tick" style="--i:4"></div>
+            <div class="min-tick" style="--i:6"></div>
+            <div class="min-tick" style="--i:7"></div>
+            <div class="min-tick" style="--i:8"></div>
+            <div class="min-tick" style="--i:9"></div>
+            <div class="min-tick" style="--i:11"></div>
+            <div class="min-tick" style="--i:12"></div>
+            <div class="min-tick" style="--i:13"></div>
+            <div class="min-tick" style="--i:14"></div>
+            <div class="min-tick" style="--i:16"></div>
+            <div class="min-tick" style="--i:17"></div>
+            <div class="min-tick" style="--i:18"></div>
+            <div class="min-tick" style="--i:19"></div>
+            <div class="min-tick" style="--i:21"></div>
+            <div class="min-tick" style="--i:22"></div>
+            <div class="min-tick" style="--i:23"></div>
+            <div class="min-tick" style="--i:24"></div>
+            <div class="min-tick" style="--i:26"></div>
+            <div class="min-tick" style="--i:27"></div>
+            <div class="min-tick" style="--i:28"></div>
+            <div class="min-tick" style="--i:29"></div>
+            <div class="min-tick" style="--i:31"></div>
+            <div class="min-tick" style="--i:32"></div>
+            <div class="min-tick" style="--i:33"></div>
+            <div class="min-tick" style="--i:34"></div>
+            <div class="min-tick" style="--i:36"></div>
+            <div class="min-tick" style="--i:37"></div>
+            <div class="min-tick" style="--i:38"></div>
+            <div class="min-tick" style="--i:39"></div>
+            <div class="min-tick" style="--i:41"></div>
+            <div class="min-tick" style="--i:42"></div>
+            <div class="min-tick" style="--i:43"></div>
+            <div class="min-tick" style="--i:44"></div>
+            <div class="min-tick" style="--i:46"></div>
+            <div class="min-tick" style="--i:47"></div>
+            <div class="min-tick" style="--i:48"></div>
+            <div class="min-tick" style="--i:49"></div>
+            <div class="min-tick" style="--i:51"></div>
+            <div class="min-tick" style="--i:52"></div>
+            <div class="min-tick" style="--i:53"></div>
+            <div class="min-tick" style="--i:54"></div>
+            <div class="min-tick" style="--i:56"></div>
+            <div class="min-tick" style="--i:57"></div>
+            <div class="min-tick" style="--i:58"></div>
+            <div class="min-tick" style="--i:59"></div>
+        </div>
+
+	</div>
+
+
+	<style>
+		html {
+			background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+			background-size: cover;
+			font-family: 'helvetica neue';
+			text-align: center;
+			font-size: 10px;
+		}
+
+		body {
+			margin: 0;
+			font-size: 2rem;
+			display: flex;
+			flex: 1;
+			min-height: 100vh;
+			align-items: center;
+		}
+
+		.clock {
+			width: 30rem;
+			height: 30rem;
+			border: 20px solid white;
+			border-radius: 50%;
+			margin: 50px auto;
+			position: relative;
+			padding: 2rem;
+			box-shadow:
+				0 0 0 4px rgba(0, 0, 0, 0.1),
+				inset 0 0 0 3px #EFEFEF,
+				inset 0 0 10px black,
+				0 0 10px rgba(0, 0, 0, 0.2);
+		}
+
+		.clock-face {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			transform: translateY(-3px);
+			/* account for the height of the clock hands */
+		}
+
+		.hand {
+			background: black;
+			position: absolute;
+			top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 6px;
+			transform-origin: 0% 50%;
+		}
+
+        .second-hand {
+            height: 2px;        /* override thickness for the second hand */
+        }
+
+        .min-hand {
+            width: 42.5%;
+            height: 4px;
+        }
+
+        .hour-hand {
+            width: 30%;
+            height: 5px;
+        }
+
+        .hour-tick {
+            position: absolute;
+            top: 100%;
+            left: 49%;
+            width: 6px;              /* thickness of tick */
+            height: 15px;            /* length of tick */
+            background: grey;
+            transform-origin: center -17rem; /* distance from center (adjusted to match clock radius) */
+            transform: rotate(calc(var(--i) * 30deg));
+        }
+
+        .min-tick {
+            position: absolute;
+            top: 100%;
+            left: 49%;
+            width: 1px;              /* thickness of tick */
+            height: 15px;            /* length of tick */
+            background: grey;
+            transform-origin: center -17rem; /* distance from centre (adjusted to match clock radius) */
+            transform: rotate(calc(var(--i) * 6deg));
+        }
+
+	</style>
+
+	<script>
+		const secondHand = document.querySelector('.second-hand');
+		// console.log(secondHand);
+        const minHand = document.querySelector('.min-hand');
+        const hourHand = document.querySelector('.hour-hand');
+
+        function setTime() {
+            const now = new Date();
+            // console.log(now.getSeconds())
+
+            const seconds = now.getSeconds();
+    		// console.log("Angle: " + seconds * 6);
+            secondHand.style.transform = "rotate(" + ((seconds * 360 / 60) + 270) + "deg)";
+
+            const minutes = now.getMinutes();
+            // console.log(minutes);
+            minHand.style.transform = "rotate(" + (((minutes * 360 / 60) + (seconds * 6 / 60)) + 270) + "deg)";
+
+            const hours = now.getHours();
+            // console.log(hours);
+            hourHand.style.transform = "rotate(" + (((hours * 360 / 60) + (minutes * 6 / 60) + (seconds * 0.1 / 60)) + 270) + "deg)";
+        }
+
+        setInterval(setTime, 1000);
+		
+	</script>
+</body>
+
+</html>
