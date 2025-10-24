@@ -33,7 +33,7 @@
 	img {
 		padding: var(--spacing);
 		background: var(--base);
-		filter: var(--blur);
+		filter: blur(var(--blur));
 		max-width: 60%;
 	}
 
@@ -68,11 +68,15 @@
 	const blurInput = document.getElementById("blur");
 	const baseInput = document.getElementById("base");
 
+	console.log(blurInput.id);
+
 	function slideUpdate() {
+		console.log("--" + this.id + ": " + this.value + "px");
 		document.documentElement.style.cssText = "--" + this.id + ": " + this.value + "px";
 	};
 
 	spacingInput.addEventListener("input", slideUpdate);
+	blurInput.addEventListener("input", slideUpdate);
   </script>
 
 </body>
