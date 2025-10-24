@@ -5,44 +5,121 @@
         <title>Ian's #JavaScript30 Challenge!</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Goldman:wght@400;700&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <div style="display: flex; justify-content: center; padding-top: 100px;">
+        <div>
             <h1 id="title">
                 <span style="font-size: 80px;">M</span>y <span class="highlight" style="font-size: 80px;">#</span><span style="font-size: 80px;">J</span>ava<span style="font-size: 80px;">S</span>cript<span class="highlight" style="font-size: 80px;">30</span> <span style="font-size: 80px;">P</span>rojects<span style="font-size: 80px;">!</span>
             </h1>
         </div>
+
+        <div class="intro" style="height: 100px;">
+            <p style="font-size: 50px; margin: 0;">Welcome!</p>
+        </div>
+
+        <div class="intro" style="width: 60%;">
+            <p style="font-size: 25px; text-align: center;">
+                This repository is used to host my implementations of the challenges as part of the 
+                <a href="https://www.javascript30.com/" style="color: chocolate;"  target="_blank">#JavaScript30 Challenge</a> created by 
+                <b><a href="https://wesbos.com/" style="color: chocolate;"  target="_blank">Wes Bos</a></b>!
+                Please feel free to check them out! 😄
+            </p>
+        </div>
         
         <div id="project-links">
-            <a href="03 - CSS Variables">CSS Variables</a>
+            <a href="https://kirisannn.github.io/JavaScript30//01 - JavaScript Drum Kit" class="tile" target="_blank">
+                <img src="Assets/JavaScript Drum Kit.png" alt="Day 1 Drum Kit preview">
+            </a>
+            <a href="https://kirisannn.github.io/JavaScript30//02 - JS and CSS Clock" class="tile" target="_blank">
+                <img src="Assets/CSS + JavaScript Clock.png" alt="Day 2 JS and CSS Clock preview">
+            </a>
+            <a href="https://kirisannn.github.io/JavaScript30//03 - CSS Variables" class="tile" target="_blank">
+                <img src="Assets/CSS Variables.png" alt="Day 3 CSS Variables preview">
+            </a>
         </div>
 
     </body>
 
     <style>
-        #title {
-            font-family: Bungee;
-            color: white;
-            font-size: 60px;
-        }
-
+        /* Fonts */
         .bungee-regular {
             font-family: "Bungee", sans-serif;
             font-weight: 400;
             font-style: normal;
         }
 
+        .goldman-regular {
+            font-family: "Goldman", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .goldman-bold {
+            font-family: "Goldman", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .intro {
+            font-family: Goldman;
+            color: aliceblue;
+            align-items: center;
+        }
+
+        #intro p {
+            margin: 0%;
+        }
+
+        #title {
+            font-family: Bungee;
+            color: white;
+            font-size: 60px;
+            text-align: center;
+        }
+
         .highlight {
             color: yellow;
         }
 
-        
+        #project-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 7 tiles per row */
+            max-width: 100%;
+            margin: auto;
+            gap: 5px;
+            padding: 20px;
+        }
+
+        #project-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid yellow;
+            border-radius: 3px;
+        }
+
+        #project-links img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom: 2px solid #ffc600;
+            opacity: 80%;
+        }
+
+
     </style>
 
     <script>
-
+        // Add event listener: Hover over will blur tile
+        // New text shows up. Same as linkedin caption (Include date)
     </script>
 
 </html>
