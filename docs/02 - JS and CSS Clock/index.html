@@ -194,8 +194,8 @@
             minHand.style.transform = "rotate(" + (((minutes * 360 / 60) + (seconds * 6 / 60)) + 270) + "deg)";
 
             const hours = now.getHours();
-            // console.log(hours);
-            hourHand.style.transform = "rotate(" + (((hours * 360 / 60) + (minutes * 6 / 60) + (seconds * 0.1 / 60)) + 270) + "deg)";
+            console.log(hours);
+            hourHand.style.transform = "rotate(" + (((hours * 360 / 12) + (minutes * 6 / 60) + (seconds * 0.1 / 60)) + 270) + "deg)";
         }
 
         setInterval(setTime, 1000);
