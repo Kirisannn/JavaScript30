@@ -182,7 +182,6 @@ var cornify_updatecount = function () {
   }
 
   if (cornify_count == 1) {
-    document.querySelector("#start").remove();
     p.innerHTML = "You've been cornified!";
   } else {
     p.innerHTML = "You've been cornified " + cornify_count + " times!";
