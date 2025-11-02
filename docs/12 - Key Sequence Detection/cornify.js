@@ -178,12 +178,14 @@ var cornify_updatecount = function () {
     p.style.textTransform = "uppercase";
     var body = document.getElementsByTagName("body")[0];
     body.appendChild(p);
+    document.getElementById("start").remove();
   }
 
   if (cornify_count == 1) {
-    p.innerHTML = "You cornified!";
+    document.querySelector("#start").remove();
+    p.innerHTML = "You've been cornified!";
   } else {
-    p.innerHTML = "You cornified " + cornify_count + " times!";
+    p.innerHTML = "You've been cornified " + cornify_count + " times!";
   }
 
   // Stores our count in a cookie for our next session.
