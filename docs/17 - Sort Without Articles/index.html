@@ -130,6 +130,10 @@
         mergeSortWithoutArticle(bands, 0, bands.length - 1);
         console.log(bands);
 
+        document.querySelector("#bands").innerHTML = bands
+            .map(band => `<li>${band}</li>`)
+            .join("");
+
     </script>
 
 </body>
