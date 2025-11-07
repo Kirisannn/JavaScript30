@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sort Without Articles</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+
+<body>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: url("corey-oconnell-96ZgYoYTBVg-unsplash.jpg");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #bands {
+            list-style: inside square;
+            font-size: 20px;
+            background: white;
+            width: 500px;
+            margin: auto;
+            padding: 0;
+            box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        #bands li {
+            border-bottom: 1px solid #efefef;
+            padding: 20px;
+        }
+
+        #bands li:last-child {
+            border-bottom: 0;
+        }
+
+        a {
+            color: #ffc600;
+            text-decoration: none;
+        }
+    </style>
+
+    <ul id="bands"></ul>
+
+    <script>
+        const bands = [
+            'The Plot in You',
+            'The Devil Wears Prada',
+            'Pierce the Veil',
+            'Norma Jean',
+            'The Bled',
+            'Say Anything',
+            'The Midway State',
+            'We Came as Romans',
+            'Counterparts',
+            'Oh, Sleeper',
+            'A Skylit Drive',
+            'Anywhere But Here',
+            'An Old Dog'
+        ];
+
+        const articles = ["The", "A", "An"];
+
+        // Function to sort an array by alphabet, ignoring article word before (i.e., "The", "A", "An", etc.)
+        function merge(arr, left, mid, right) {
+            const n1 = mid - left + 1;
+            const n2 = right - mid;
+
+            // Create temp arrays
+            const L = new Array(n1);
+            const R = new Array(n2);
+
+            // Copy data to temp arrays L[] and R[]
+            for (let i = 0; i < n1; i++)
+                L[i] = arr[left + i];
+            for (let j = 0; j < n2; j++)
+                R[j] = arr[mid + 1 + j];
+
+            let i = 0, j = 0;
+            let k = left;
+
+            // Merge the temp arrays back into arr[left..right]
+            while (i < n1 && j < n2) {
+                let temp1 = L[i].split(" ");
+                let temp2 = R[j].split(" ");
+
+                let x = articles.includes(temp1[0]) ? temp1[1] : temp1[0];
+                let y = articles.includes(temp2[0]) ? temp2[1] : temp2[0];
+                if (x <= y) {
+                    arr[k] = L[i];
+                    i++;
+                } else {
+                    arr[k] = R[j];
+                    j++;
+                }
+                k++;
+            }
+
+            // Copy the remaining elements of L[], if there are any
+            while (i < n1) {
+                arr[k] = L[i];
+                i++;
+                k++;
+            }
+
+            // Copy the remaining elements of R[], if there are any
+            while (j < n2) {
+                arr[k] = R[j];
+                j++;
+                k++;
+            }
+        }
+
+        function mergeSortWithoutArticle(arr, left, right) {
+            if (left >= right) return;
+
+            const mid = Math.floor(left + (right - left) / 2);
+            mergeSortWithoutArticle(arr, left, mid);
+            mergeSortWithoutArticle(arr, mid + 1, right);
+            merge(arr, left, mid, right);
+        }
+
+        mergeSortWithoutArticle(bands, 0, bands.length - 1);
+        console.log(bands);
+
+    </script>
+
+</body>
+
+</html>
