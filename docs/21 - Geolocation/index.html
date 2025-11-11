@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="https://fav.farm/🔥" />
+    <link rel="icon" href="https://fav.farm/✅" />
 </head>
 
 <body>
@@ -80,7 +80,6 @@
 
         /*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
     </style>
-
     <script>
         const arrow = document.querySelector(".arrow");
         const speed = document.querySelector(".speed-value");
@@ -88,10 +87,9 @@
         navigator.geolocation.watchPosition((data) => {
             console.log(data);
             speed.textContent = data.coords.speed;
-            arrow.style.transform = `rotate(${data.coords.heading})deg`
+            arrow.style.transform = `rotate(${data.coords.heading}deg)`;
         }, (err) => {
-            console.err(err);
-            alert("Hey! You need to allow that!");
+            console.error(err);
         });
     </script>
 </body>
