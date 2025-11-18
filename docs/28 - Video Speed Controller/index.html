@@ -36,7 +36,7 @@
             const min = 0.1;
             const max = 5;
             const height = Math.round(percent * 100);
-            if (height >= 0.1 && height < 100) {
+            if (height >= 0.1 && height <= 100) {
                 const playbackSpeed = percent * (max - min) + min;
                 speedBar.style.height = height + "%";
                 speedBar.textContent = playbackSpeed.toFixed(2) + "×";
