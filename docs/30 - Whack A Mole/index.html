@@ -93,7 +93,10 @@
             scoreBoard.textContent = score;
         }
 
-        moles.forEach(mole => mole.addEventListener("click", bonkMole));
+        moles.forEach(mole => {
+            mole.addEventListener("click", bonkMole);
+            mole.addEventListener("touchstart", bonkMole);
+        });
     </script>
 </body>
 
