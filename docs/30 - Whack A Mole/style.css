@@ -71,9 +71,9 @@ h1 {
 }
 
 button {
-    margin: 5vmin auto 0 auto;
-    padding: 4vmin 10vmin;
-    font-size: 7vmin;
+    margin: 3vmin auto 0 auto;
+    padding: 3vmin 6vmin;
+    font-size: 5vmin;
     cursor: pointer;
     display: block;
     background-color: ghostwhite;
