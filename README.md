@@ -1,6 +1,6 @@
 # Kirisannn's  JavaScript30 Challenge!
 
-Welcome to my JavaScript30 challenge attempt! The 30 Days were incredibly fun and I 100% recommend any new devs do this to learn and to experienced ones for practice! 
+Welcome to my JavaScript30 challenge attempt! The 30 Days were incredibly fun and I 100% recommend any new devs do this to learn and for experienced ones to practice! 
 
 This repository is used to host my implementations of the challenges as part of the JavaScript30 Challenge created by Wes Bos!
 
